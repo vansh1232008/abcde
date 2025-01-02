@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DSA Lab Programs (1 - 10)</title>
+
+  <!-- Prism CSS for syntax highlighting -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+  />
+
+  <!-- Our custom stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Dark Mode toggle button -->
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+    ☾ / ☀
+  </button>
+
+  <div class="container">
+    <h1>DSA Lab Programs (1 - 10)</h1>
+
+    <!-- Dropdown to pick which program's code to display -->
+    <div class="dropdown-container">
+      <label for="programSelect">Select the program:</label>
+      <select id="programSelect" onchange="showCode()">
+        <option value="code1">1) Infix to Postfix</option>
+        <option value="code2">2) Evaluation of Prefix</option>
+        <option value="code3">3) Message Queueing System</option>
+        <option value="code4">4) Multiply Polynomials (Linked List)</option>
+        <option value="code5">5) Queue of Integers (Circular List)</option>
+        <option value="code6">6) Double Hashing</option>
+        <option value="code7">7) Priority Queue (Min-Heap)</option>
+        <option value="code8">8) Expression Tree</option>
+        <option value="code9">9) Binary Tree</option>
+        <option value="code10">10) Binary Search Tree</option>
+      </select>
+    </div>
+
+    <!-- Code block with a floating Copy button -->
+    <div class="code-wrapper">
+      <button class="copy-button" onclick="copyCode()">Copy</button>
+      <pre class="code-block">
+<code id="codeBlock" class="language-c"></code>
+      </pre>
+    </div>
+  </div>
+
+  <!-- Prism JS for syntax highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+  <!-- Our main script with the code snippets and logic -->
+  <script src="script.js"></script>
+
+  <!-- Inline script for toggling dark mode -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
