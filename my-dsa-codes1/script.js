@@ -1001,8 +1001,7 @@ const codeSnippets = {
   
       return 0;
   }
-  `
-  };
+  `};
   
   // -----------------------------------------
   // Show the selected snippet in the <code> block
@@ -1036,3 +1035,4 @@ const codeSnippets = {
   // -----------------------------------------
   // On page load, show the first snippet by default
   window.onload = showCode;
+  
