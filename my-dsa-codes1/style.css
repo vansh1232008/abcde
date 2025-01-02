@@ -1,3 +1,7 @@
+// style.js
+
+// Your entire CSS, wrapped as a JavaScript template literal:
+const cssContent = `
 /* =============================
    Base (Light Mode) Styles
    ============================= */
@@ -217,3 +221,12 @@ body.dark-mode .dark-mode-toggle {
 body.dark-mode .copy-button {
   background: linear-gradient(135deg, #00cec9, #0984e3);
 }
+`;
+
+// Create a <style> element and append it to <head>
+const style = document.createElement('style');
+style.setAttribute('type', 'text/css');
+style.appendChild(document.createTextNode(cssContent));
+
+// Insert into the DOM
+document.head.appendChild(style);
