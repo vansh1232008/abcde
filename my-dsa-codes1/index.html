@@ -12,12 +12,38 @@
 
   <!-- Our custom stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- 
+    NightOwl CDN Script
+    This script loads the NightOwl module from the CDN.
+    For advanced configuration, we import createNightowl from this URL (ESM import) 
+  -->
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"
+  ></script>
+
+  <!-- 
+    NightOwl Initialization
+    We import { createNightowl } from the same CDN and configure:
+    - defaultMode: 'dark'
+    - toggleButtonMode: 'newState' 
+  -->
+  <script type="module">
+    import { createNightowl } from 'https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js';
+
+    createNightowl({
+      defaultMode: 'dark',
+      toggleButtonMode: 'newState',
+    });
+  </script>
 </head>
 <body>
-  <!-- Dark Mode toggle button -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-    ☾ / ☀
-  </button>
+  <!-- 
+    NightOwl automatically injects a toggle button overlay in the top-left corner.
+    If you need to exclude any element from being inverted in dark mode,
+    add the class="nightowl-daylight" to it.
+  -->
 
   <div class="container">
     <h1>DSA Lab Programs (1 - 10)</h1>
@@ -54,11 +80,54 @@
   <!-- Our main script with the code snippets and logic -->
   <script src="script.js"></script>
 
-  <!-- Inline script for toggling dark mode -->
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
+  <!-- 
+    Removed the old "toggleDarkMode()" function 
+    because NightOwl now handles dark-mode functionality. 
+  -->
+
+  <!-- 
+    -------------------------------------------------------------------------
+    State of the Project
+
+    This project is still in a prototyping stage, and the API is still subject 
+    to change. Please only use it with a fixed minor version.
+
+    Known Issues
+
+    - Position absolute and position fixed elements might not work as expected.
+    - The toggle button overlay has weird paddings sometimes.
+
+    Roadmap (Maybe)
+
+    - Add more utility classes to improve contrast.
+    - Add better support for box-shadow.
+
+    Integration
+
+    Integration can be achieved by one of the following methods:
+    1) CDN (shown above)
+    2) npm (bundler approach)
+
+    Configuration Options
+
+    defaultMode: 'light' | 'dark' (Default: 'light')
+    toggleButtonMode: 'currentState' | 'newState' (Default: 'currentState')
+
+    Customize Dark Mode
+
+    You can exclude elements from being inverted in dark mode using the 
+    ".nightowl-daylight" CSS class.
+
+    Contribution Guidelines
+
+    Please open an issue and wait for one of the Maintainers to approve 
+    it until you open a merge request.
+
+    Credits
+
+    This project is heavily inspired by Aral Balkan who wrote down this idea 
+    to implement dark mode in a few lines of CSS using CSS Filters.
+    -------------------------------------------------------------------------
+  -->
 </body>
 </html>
